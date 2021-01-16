@@ -8,7 +8,7 @@ import net.minecraftforge.fml.network.simple.SimpleChannel;
 import java.util.Optional;
 
 public class CompressPacketHandler {
-    private static final String PROTOCOL_VERSION = "1";
+    private static final String PROTOCOL_VERSION = "2";
     public static SimpleChannel INSTANCE;
 
     public static void init() {
