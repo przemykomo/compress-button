@@ -1,6 +1,7 @@
 package xyz.przemyk.compressbutton;
 
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(CompressButtonMod.MODID)
 public class CompressButtonMod {
@@ -9,5 +10,6 @@ public class CompressButtonMod {
 
     public CompressButtonMod() {
         CompressPacketHandler.init();
+        ClientEvents.addListeners(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }

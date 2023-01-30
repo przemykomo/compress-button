@@ -1,4 +1,4 @@
 {
-    "compressbutton.inventory": "Compress inventory",
-    "compressbutton.item": "Compress item"
+    "key.compressbutton.category": "Quick Compress",
+    "key.compress_item": "Compress item"
 }
