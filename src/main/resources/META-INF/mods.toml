@@ -2,20 +2,19 @@ modLoader="javafml"
 loaderVersion="[43,)"
 license="GNU LGPLv3"
 [[mods]]
-modId="compressbutton"
+modId="quickcompress"
 version="${file.jarVersion}"
 displayName="Quick Compress"
 description='''
-Adds a button inside the player inventory which you can click on holding an item to compress it.
-For example when player holds 18 redstone and clicks the button, then it changes to two blocks.
+Allows to quickly compress items using a 3x3 recipe.
 '''
-[[dependencies.compressbutton]]
+[[dependencies.quickcompress]]
     modId="forge"
     mandatory=true
     versionRange="[43.1.1,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.compressbutton]]
+[[dependencies.quickcompress]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.19.2,1.20)"

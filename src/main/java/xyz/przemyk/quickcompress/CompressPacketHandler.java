@@ -1,4 +1,4 @@
-package xyz.przemyk.compressbutton;
+package xyz.przemyk.quickcompress;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkDirection;
@@ -8,7 +8,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import java.util.Optional;
 
 public class CompressPacketHandler {
-    private static final String PROTOCOL_VERSION = "2";
+    private static final String PROTOCOL_VERSION = "3";
     public static SimpleChannel INSTANCE;
 
     public static void init() {

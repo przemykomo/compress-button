@@ -1,5 +1,6 @@
 //file:noinspection GroovyAssignabilityCheck
 //file:noinspection SpellCheckingInspection
+//file:noinspection GrDeprecatedAPIUsage
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
@@ -13,9 +14,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '${minecraft_version}-${compressbutton_version}'
-group = 'xyz.przemyk.compressbutton'
-archivesBaseName = 'compressbutton'
+version = "${minecraft_version}-${quickcompress_version}"
+group = 'xyz.przemyk.quickcompress'
+archivesBaseName = 'quickcompress'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -33,7 +34,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                compressbutton {
+                quickcompress {
                     source sourceSets.main
                 }
             }
@@ -45,7 +46,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                compressbutton {
+                quickcompress {
                     source sourceSets.main
                 }
             }
@@ -57,10 +58,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'simpleplanes', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'quickcompress', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                compressbutton {
+                quickcompress {
                     source sourceSets.main
                 }
             }
@@ -79,7 +80,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "compressbutton",
+            "Specification-Title": "quickcompress",
             "Specification-Vendor": "Przemyk",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
