@@ -5,11 +5,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.Slot;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.client.ClientRegistry;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import org.lwjgl.glfw.GLFW;
 
 @Mod.EventBusSubscriber(Dist.CLIENT)
@@ -21,13 +22,13 @@ public class ClientEvents {
         eventBus.addListener(ClientEvents::registerKeyBindings);
     }
 
-    private static void registerKeyBindings(RegisterKeyMappingsEvent event) {
+    private static void registerKeyBindings(FMLClientSetupEvent event) {
         compressKey = new KeyMapping("key.quickcompress.compress_item", GLFW.GLFW_KEY_C, "key.quickcompress.category");
-        event.register(compressKey);
+        event.enqueueWork(() -> ClientRegistry.registerKeyBinding(compressKey));
     }
 
     @SubscribeEvent
-    public static void onKeyPressed(ScreenEvent.KeyPressed.Pre event) {
+    public static void onKeyPressed(ScreenEvent.KeyboardKeyPressedEvent.Pre event) {
         Minecraft minecraft = Minecraft.getInstance();
         if (compressKey.getKey().getValue() == event.getKeyCode()) {
             if (event.getScreen() instanceof AbstractContainerScreen<?> containerScreen) {

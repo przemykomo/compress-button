@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[40,)"
 license="GNU LGPLv3"
 [[mods]]
 modId="quickcompress"
@@ -11,12 +11,12 @@ Allows to quickly compress items using a 3x3 recipe.
 [[dependencies.quickcompress]]
     modId="forge"
     mandatory=true
-    versionRange="[43.1.1,)"
+    versionRange="[40.2.9,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.quickcompress]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2,1.20)"
+    versionRange="[1.18.2,1.19)"
     ordering="NONE"
     side="BOTH"
