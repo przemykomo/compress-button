@@ -68,6 +68,9 @@ public class CompressPacket {
                                     slot1.safeInsert(recipeOutput);
                                 }
                                 if (totalCountToTake == 0) {
+                                    if (!recipeOutput.isEmpty()) {
+                                        sender.getInventory().placeItemBackInInventory(recipeOutput);
+                                    }
                                     break;
                                 }
                             }
